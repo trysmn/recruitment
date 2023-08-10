@@ -5,6 +5,6 @@ app = Flask(__name__)
 
 @app.post('/feedback')
 def feedback():
-    if request.json == {}:
+    if request.json == {} or request.json == {"feedback": ""}:
         return Response(status=400)
     return Response(status=200)
